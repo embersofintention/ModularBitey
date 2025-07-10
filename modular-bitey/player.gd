@@ -12,11 +12,11 @@ const SPEED = 600
 
 func _ready() -> void:
 	# instance other nodes
-	Fella = %PlayerAnimations
-	# get_tree().debug_collisions_hint = true
-	# ! define helper functions later
+	Fella = %PlayerAnimations # call the PlayerAnimations node
 	
-# Helper Function -- Only change animations when needed, not every frame
+	# In case you need to see collision stuff to test:
+	# get_tree().debug_collisions_hint = true
+	
 
 
 func _physics_process(delta: float) -> void:
