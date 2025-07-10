@@ -24,6 +24,11 @@ func change_animation(anim_name: String):
 		%AnimationPlayer.play(anim_name)
 		current_animation = anim_name
 
+func clear_and_queue_animation(anim_name: String):
+	if current_animation != anim_name: 
+		%AnimationPlayer.clear_queue()
+		%AnimationPlayer.queue(anim_name)
+		current_animation = anim_name
 
 func play_idle_animation(): 
 	# %AnimationPlayer.play("idle")
@@ -36,7 +41,8 @@ func play_walk_animation():
 
 func play_bite_animation(): #NOT CURRENTLY WORKING! fix it later
 	# %AnimationPlayer.play("bite")
-	change_animation("bite")
+	# change_animation("bite")
+	clear_and_queue_animation("bite")
 	print_debug("Bite!")
 	
 	
